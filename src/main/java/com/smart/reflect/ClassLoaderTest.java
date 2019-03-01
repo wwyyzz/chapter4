@@ -7,5 +7,6 @@ public class ClassLoaderTest {
         System.out.println("current loader:" + loader);
         System.out.println("parent loader:" + loader.getParent());
         System.out.println("grandparent loader:" + loader.getParent().getParent());
+
     }
 }
