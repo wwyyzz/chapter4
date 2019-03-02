@@ -12,13 +12,18 @@ public class FileSourceExample {
     public static void main(String[] args){
         try{
             String filePath = "/home/navy/IdeaProjects/masterSpring/code/chapter4/src/main/resources/conf/file1.txt";
+            //1. 使用系统文件路径方式加载文件
             WritableResource res1 = new PathResource(filePath);
+
+            //2. 使用类路径方式加载文件
             Resource res2 = new ClassPathResource("conf/file1.txt");
 
+            //3. 使用WritableResource接口写资源文件
             OutputStream stream1 = res1.getOutputStream();
             stream1.write("welcome to your BBS".getBytes());
             stream1.close();
 
+            //4. 使用Resource接口读资源文件
             InputStream ins1 = res1.getInputStream();
             InputStream ins2 = res2.getInputStream();
 
